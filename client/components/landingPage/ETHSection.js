@@ -1,12 +1,13 @@
 import Image from 'next/image';
 
-import ETHSvg from '../../public/images/ETH.svg';
+import ETHSvg from '/public/images/ETH.svg';
 
 const styles = {
   wrapper: 'flex flex-col md:flex-row items-center justify-center md:mt-10 ',
   textWrapper: 'md:w-2/5 w-10/12',
   h1: 'md:text-2xl font-bold text-left text-white main-text',
   p: 'text-left text-lg text-white mt-3 secondary-text',
+  imageWrapper: 'mt-5',
 };
 
 const ETHSection = () => {
@@ -20,8 +21,8 @@ const ETHSection = () => {
           Encourage a healthier world with Hiptzo!
         </p>
       </div>
-      <div>
-        <Image src={ETHSvg} width={300} height={300} />
+      <div className={styles.imageWrapper}>
+        <Image src={ETHSvg} width={250} height={250} />
       </div>
     </section>
   );
