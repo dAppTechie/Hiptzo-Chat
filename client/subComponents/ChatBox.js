@@ -4,7 +4,7 @@ import { FiSmile } from 'react-icons/fi';
 
 const ChatBox = () => {
   return (
-    <div className="center item-center sticky top-0 z-10 mx-auto mb-5 mt-auto flex w-full justify-center space-x-4">
+    <div className="center sticky top-0 z-10 mx-auto mb-5 mt-auto flex w-full items-center justify-center space-x-4">
       <div class="avatar">
         <div class="w-10 rounded-full">
           <img src="https://api.lorem.space/image/face?hash=96310" />
@@ -19,10 +19,6 @@ const ChatBox = () => {
         <ImAttachment className="text-white opacity-50" />
         <FiSmile className="text-white opacity-50" />
       </div>
-      <button className="flex flex-row items-center rounded-lg bg-[#FF7F50] px-5 text-white">
-        <RiSendPlaneFill className="mr-1" />
-        Send
-      </button>
     </div>
   );
 };

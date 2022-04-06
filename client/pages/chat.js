@@ -1,4 +1,13 @@
-import { LeftMain, LeftInside, Main, RightMain } from '../components/chat';
+import { useState } from 'react';
+
+import {
+  LeftMain,
+  LeftInside,
+  Main,
+  RightMain,
+  UserProfile,
+  Profile,
+} from '../components/chat';
 
 const chat = () => {
   return (
@@ -6,7 +15,9 @@ const chat = () => {
       <LeftMain />
       <LeftInside />
       <Main />
-      <RightMain />
+      {/* <RightMain /> */}
+      {/* <UserProfile /> */}
+      <Profile />
     </div>
   );
 };

@@ -8,11 +8,6 @@ import ChatLogoSVG from '/public/images/chatlogo.svg';
 const LeftMain = () => {
   const { isAuthenticated, user, logout } = useMoralis();
 
-  const logOut = async () => {
-    await logout();
-    console.log('logged out');
-  };
-
   return (
     <div className="flex w-fit flex-col items-center justify-between border-r border-stone-600 p-4">
       <div className="flex flex-col items-center space-y-4">
@@ -46,7 +41,7 @@ const LeftMain = () => {
         </div>
       </div>
       <div>
-        <div className="avatar cursor-pointer" onClick={logOut}>
+        <div className="avatar cursor-pointer">
           <div className="w-12 rounded-full">
             <img src="https://api.lorem.space/image/face?hash=92310" />
           </div>
