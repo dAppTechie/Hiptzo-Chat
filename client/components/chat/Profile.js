@@ -38,7 +38,7 @@ const Profile = () => {
           <FaEthereum className="text-white" />
         </div>
       </div>
-      <div tabindex="0" className="collapse-arrow collapse mt-14 w-full">
+      <div tabIndex="0" className="collapse-arrow collapse mt-14 w-full">
         <input type="checkbox" />
         <div className="collapse-title text-base font-medium">
           Uploaded Media

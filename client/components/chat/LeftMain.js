@@ -4,9 +4,12 @@
 import Image from 'next/image';
 import { useMoralis } from 'react-moralis';
 import ChatLogoSVG from '/public/images/chatlogo.svg';
+import { useDispatch } from 'react-redux';
+import { setUserProfile } from '../../redux/profileSlice';
 
 const LeftMain = () => {
   const { isAuthenticated, user, logout } = useMoralis();
+  const dispatch = useDispatch();
 
   return (
     <div className="flex w-fit flex-col items-center justify-between border-r border-stone-600 p-4">
@@ -41,7 +44,10 @@ const LeftMain = () => {
         </div>
       </div>
       <div>
-        <div className="avatar cursor-pointer">
+        <div
+          className="avatar cursor-pointer"
+          onClick={() => dispatch(setUserProfile())}
+        >
           <div className="w-12 rounded-full">
             <img src="https://api.lorem.space/image/face?hash=92310" />
           </div>

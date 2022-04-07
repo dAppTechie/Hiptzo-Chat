@@ -34,7 +34,7 @@ const RightMain = () => {
           <BsCameraVideo />
         </div>
       </div>
-      <div tabindex="0" className="collapse-arrow collapse mt-3 w-full">
+      <div tabIndex="0" className="collapse-arrow collapse mt-3 w-full">
         <input type="checkbox" />
         <div className="collapse-title text-base font-medium">About</div>
         <div className="collapse-content">
@@ -64,7 +64,7 @@ const RightMain = () => {
           </div>
         </div>
       </div>
-      <div tabindex="0" className="collapse-arrow collapse w-full">
+      <div tabIndex="0" className="collapse-arrow collapse w-full">
         <input type="checkbox" />
         <div className="collapse-title text-base font-medium">Members</div>
         <div className="collapse-content">
@@ -80,7 +80,7 @@ const RightMain = () => {
           </ul>
         </div>
       </div>
-      <div tabindex="0" className="collapse-arrow collapse w-full">
+      <div tabIndex="0" className="collapse-arrow collapse w-full">
         <input type="checkbox" />
         <div className="collapse-title text-base font-medium">Media</div>
         <div className="collapse-content">

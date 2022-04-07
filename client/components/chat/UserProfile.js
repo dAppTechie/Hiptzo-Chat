@@ -1,12 +1,16 @@
 import { useMoralis } from 'react-moralis';
+import { useDispatch } from 'react-redux';
 
 import { AiOutlineFileImage } from 'react-icons/ai';
 import { AiOutlineFileText } from 'react-icons/ai';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { IoIosArrowForward } from 'react-icons/io';
+import { AiOutlineClose } from 'react-icons/ai';
+import { setDefaultProfile } from '../../redux/profileSlice';
 
 const UserProfile = () => {
-  const { user, LogOut } = useMoralis();
+  const { user, logout } = useMoralis();
+  const dispatch = useDispatch();
 
   const logOut = async () => {
     await logout();
@@ -14,7 +18,11 @@ const UserProfile = () => {
   };
 
   return (
-    <div className="flex w-96 flex-col items-center border-l border-stone-500 pt-5">
+    <div className="relative flex w-96 flex-col items-center border-l border-stone-500 pt-5">
+      <AiOutlineClose
+        className="absolute top-2 right-2 cursor-pointer text-white"
+        onClick={() => dispatch(setDefaultProfile())}
+      />
       <div className="avatar placeholder ">
         <div className="w-40 rounded-full bg-neutral-focus text-neutral-content">
           <span className="text-3xl">Avatar</span>
@@ -27,14 +35,14 @@ const UserProfile = () => {
           LOGOUT
         </button>
       </div>
-      <div tabindex="0" className="collapse-arrow collapse w-full">
+      <div tabIndex="0" className="collapse-arrow collapse w-full">
         <input type="checkbox" />
         <div className="collapse-title text-base font-medium">Friends</div>
         <div className="collapse-content">
           <ul>
             <li className="flex items-center space-x-1">
-              <div class="avatar">
-                <div class="w-5 rounded-full">
+              <div className="avatar">
+                <div className="w-5 rounded-full">
                   <img src="https://api.lorem.space/image/face?hash=92310" />
                 </div>
               </div>
@@ -43,7 +51,7 @@ const UserProfile = () => {
           </ul>
         </div>
       </div>
-      <div tabindex="0" className="collapse-arrow collapse w-full">
+      <div tabIndex="0" className="collapse-arrow collapse w-full">
         <input type="checkbox" />
         <div className="collapse-title text-base font-medium">
           Uploaded Media

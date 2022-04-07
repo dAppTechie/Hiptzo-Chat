@@ -1,12 +1,11 @@
-import { RiSendPlaneFill } from 'react-icons/ri';
 import { ImAttachment } from 'react-icons/im';
 import { FiSmile } from 'react-icons/fi';
 
 const ChatBox = () => {
   return (
     <div className="center sticky top-0 z-10 mx-auto mb-5 mt-auto flex w-full items-center justify-center space-x-4">
-      <div class="avatar">
-        <div class="w-10 rounded-full">
+      <div className="avatar">
+        <div className="w-10 rounded-full">
           <img src="https://api.lorem.space/image/face?hash=96310" />
         </div>
       </div>

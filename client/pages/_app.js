@@ -1,5 +1,7 @@
 import '../styles/globals.css';
 import { MoralisProvider } from 'react-moralis';
+import store from '../redux/store';
+import { Provider } from 'react-redux';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -7,7 +9,9 @@ function MyApp({ Component, pageProps }) {
       serverUrl={process.env.NEXT_PUBLIC_MORALIS_URL}
       appId={process.env.NEXT_PUBLIC_MORALIS_APP_ID}
     >
-      <Component {...pageProps} />
+      <Provider store={store}>
+        <Component {...pageProps} />
+      </Provider>
     </MoralisProvider>
   );
 }
