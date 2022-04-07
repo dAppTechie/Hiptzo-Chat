@@ -16,10 +16,17 @@ export const headSlice = createSlice({
     setSearchBar: (state) => {
       state.value = 'searchBar';
     },
+    currentHeader: (state, action) => {
+      state.value = action.payload;
+    },
   },
 });
 
-export const { setDefaultHeader, setChangeUserName, setSearchBar } =
-  headSlice.actions;
+export const {
+  setDefaultHeader,
+  setChangeUserName,
+  setSearchBar,
+  currentHeader,
+} = headSlice.actions;
 
 export default headSlice.reducer;

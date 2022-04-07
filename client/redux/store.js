@@ -5,6 +5,6 @@ import headSliceReducer from './headSlice';
 export default configureStore({
   reducer: {
     profile: profileSliceReducer,
-    head: headSliceReducer,
+    header: headSliceReducer,
   },
 });

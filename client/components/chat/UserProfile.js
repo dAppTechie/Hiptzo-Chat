@@ -7,6 +7,7 @@ import { AiOutlineDownload } from 'react-icons/ai';
 import { IoIosArrowForward } from 'react-icons/io';
 import { AiOutlineClose } from 'react-icons/ai';
 import { setDefaultProfile } from '../../redux/profileSlice';
+import { setChangeUserName } from '../../redux/headSlice';
 import { shortenAddress } from '../../utils/shortenAddress';
 
 const UserProfile = () => {
@@ -33,7 +34,12 @@ const UserProfile = () => {
         </div>
       </div>
       <div className="mt-3 flex flex-col items-center">
-        <span className="text-white">UserName</span>
+        <span
+          className="cursor-pointer text-white"
+          onClick={() => dispatch(setChangeUserName())}
+        >
+          {user.getUsername()}
+        </span>
         <span className="text-[#FF7F50]">{shortenAddress(ethAddress)}</span>
         <button className="mt-3 text-[#FFBA7A]" onClick={logOut}>
           LOGOUT
