@@ -1,27 +1,7 @@
 import { useMoralis } from 'react-moralis';
 
-const styles = {
-  wrapper: 'flex h-20 w-full justify-between sticky top-0 gradient-bg z-10',
-  logoContainer: 'flex items-center ml-20',
-  h1: 'main-text text-4xl font-bold text-white cursor-pointer',
-  ul: 'flex main-text text-white space-x-4',
-  li: 'cursor-pointer hover:text-[#FF7F50]',
-  linkContainer: 'flex items-center w-fit space-x-4 mr-5 hidden md:flex',
-  buttonContainer: 'flex items-center',
-  button:
-    'main-text text-[#FF7F50] bg-[#FF7F50] bg-opacity-25 hover:bg-[#FF7F50] border border-[#FF7F50] hover:text-white hover:border-opacity-10 text-sm font-bold py-2 px-4 rounded-full',
-};
-
 const Navbar = () => {
-  const {
-    Moralis,
-    authenticate,
-    isAuthenticated,
-    isAuthenticating,
-    user,
-    account,
-    logout,
-  } = useMoralis();
+  const { authenticate, isAuthenticated, logout } = useMoralis();
 
   const login = async () => {
     if (!isAuthenticated) {
@@ -41,31 +21,39 @@ const Navbar = () => {
   };
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.logoContainer}>
+    <div className="gradient-bg sticky top-0 z-10 flex h-20 w-full justify-between">
+      <div className="ml-20 flex items-center">
         <a href="#home">
-          <h1 className={styles.h1}>Hiptzo Chat</h1>
+          <h1 className="main-text cursor-pointer text-4xl font-bold text-white">
+            Hiptzo Chat
+          </h1>
         </a>
       </div>
-      <div className={styles.linkContainer}>
-        <ul className={styles.ul}>
+      <div className="mr-5 hidden w-fit items-center space-x-4 md:flex">
+        <ul className="main-text flex space-x-4 text-white">
           <a href="#chat">
-            <li className={styles.li}>Chat</li>
+            <li className="cursor-pointer hover:text-[#FF7F50]">Chat</li>
           </a>
           <a href="#NFT">
-            <li className={styles.li}>NFT</li>
+            <li className="cursor-pointer hover:text-[#FF7F50]">NFT</li>
           </a>
           <a href="#ETH">
-            <li className={styles.li}>Send ETH</li>
+            <li className="cursor-pointer hover:text-[#FF7F50]">Send ETH</li>
           </a>
         </ul>
-        <div className={styles.buttonContainer}>
+        <div className="flex items-center">
           {isAuthenticated ? (
-            <button onClick={logOut} className={styles.button}>
+            <button
+              onClick={logOut}
+              className="main-text rounded-full border border-[#FF7F50] bg-[#FF7F50] bg-opacity-25 py-2 px-4 text-sm font-bold text-[#FF7F50] hover:border-opacity-10 hover:bg-[#FF7F50] hover:text-white"
+            >
               Log Out
             </button>
           ) : (
-            <button onClick={login} className={styles.button}>
+            <button
+              onClick={login}
+              className="main-text rounded-full border border-[#FF7F50] bg-[#FF7F50] bg-opacity-25 py-2 px-4 text-sm font-bold text-[#FF7F50] hover:border-opacity-10 hover:bg-[#FF7F50] hover:text-white"
+            >
               Login
             </button>
           )}

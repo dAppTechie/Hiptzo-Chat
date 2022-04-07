@@ -1,10 +1,12 @@
 import MainHeader from '../../subComponents/MainHeader';
 import ChatBox from '../../subComponents/ChatBox';
+import UserName from '../../subComponents/UserName';
 
 const Main = () => {
   return (
     <div className="flex w-full flex-col">
-      <MainHeader />
+      {/* <MainHeader /> */}
+      <UserName />
       <ChatBox />
     </div>
   );

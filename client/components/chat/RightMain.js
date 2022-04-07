@@ -52,8 +52,8 @@ const RightMain = () => {
               </span>
             </div>
             <div className="flex items-center space-x-1 rounded-br-xl rounded-bl-xl bg-gray-400 p-2">
-              <div class="avatar">
-                <div class="w-5 rounded-full">
+              <div className="avatar">
+                <div className="w-5 rounded-full">
                   <img src="https://api.lorem.space/image/face?hash=92310" />
                 </div>
               </div>
@@ -70,8 +70,8 @@ const RightMain = () => {
         <div className="collapse-content">
           <ul>
             <li className="flex items-center space-x-1">
-              <div class="avatar">
-                <div class="w-5 rounded-full">
+              <div className="avatar">
+                <div className="w-5 rounded-full">
                   <img src="https://api.lorem.space/image/face?hash=92310" />
                 </div>
               </div>

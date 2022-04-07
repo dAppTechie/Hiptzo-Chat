@@ -13,15 +13,8 @@ const styles = {
 };
 
 const Hero = () => {
-  const {
-    Moralis,
-    authenticate,
-    isAuthenticated,
-    isAuthenticating,
-    user,
-    account,
-    logout,
-  } = useMoralis();
+  const { authenticate, isAuthenticated, isAuthenticating, logout } =
+    useMoralis();
 
   const login = async () => {
     if (!isAuthenticated) {

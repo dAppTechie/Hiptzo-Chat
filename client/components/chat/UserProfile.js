@@ -7,9 +7,13 @@ import { AiOutlineDownload } from 'react-icons/ai';
 import { IoIosArrowForward } from 'react-icons/io';
 import { AiOutlineClose } from 'react-icons/ai';
 import { setDefaultProfile } from '../../redux/profileSlice';
+import { shortenAddress } from '../../utils/shortenAddress';
 
 const UserProfile = () => {
-  const { user, logout } = useMoralis();
+  const { user, logout, account } = useMoralis();
+  const currentUser = user;
+  const ethAddress = user.attributes.ethAddress;
+
   const dispatch = useDispatch();
 
   const logOut = async () => {
@@ -30,7 +34,7 @@ const UserProfile = () => {
       </div>
       <div className="mt-3 flex flex-col items-center">
         <span className="text-white">UserName</span>
-        <span className="text-[#FF7F50]">0x0bcd....bcbc</span>
+        <span className="text-[#FF7F50]">{shortenAddress(ethAddress)}</span>
         <button className="mt-3 text-[#FFBA7A]" onClick={logOut}>
           LOGOUT
         </button>
