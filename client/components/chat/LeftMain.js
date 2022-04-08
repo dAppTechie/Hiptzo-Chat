@@ -2,13 +2,11 @@
 // TODO User Profile
 
 import Image from 'next/image';
-import { useMoralis } from 'react-moralis';
 import ChatLogoSVG from '/public/images/chatlogo.svg';
 import { useDispatch } from 'react-redux';
 import { setUserProfile } from '../../redux/profileSlice';
 
 const LeftMain = () => {
-  const { isAuthenticated, user, logout } = useMoralis();
   const dispatch = useDispatch();
 
   return (

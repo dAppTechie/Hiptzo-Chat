@@ -1,5 +1,4 @@
-import { useMoralis } from 'react-moralis';
-
+import { useDispatch } from 'react-redux';
 import { BsPersonPlus } from 'react-icons/bs';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { BsMic } from 'react-icons/bs';
@@ -8,8 +7,10 @@ import { AiOutlineFileImage } from 'react-icons/ai';
 import { AiOutlineFileText } from 'react-icons/ai';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { IoIosArrowForward } from 'react-icons/io';
+import { setSearchBar } from '../../redux/headSlice';
 
 const RightMain = () => {
+  const dispatch = useDispatch();
   return (
     <div className="flex w-96 flex-col items-center border-l border-stone-500 pt-5">
       <div className="avatar placeholder ">
@@ -21,16 +22,19 @@ const RightMain = () => {
         <span className="text-white">#room-name</span>
       </div>
       <div className=" mt-3 flex space-x-3 text-white">
-        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white bg-stone-700">
+        <div
+          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white bg-stone-700"
+          onClick={() => dispatch(setSearchBar())}
+        >
           <BsPersonPlus />
         </div>
-        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white bg-stone-700">
+        <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white  bg-stone-700">
           <AiOutlineFileSearch />
         </div>
-        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white bg-stone-700">
+        <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white  bg-stone-700">
           <BsMic />
         </div>
-        <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white bg-stone-700">
+        <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white  bg-stone-700">
           <BsCameraVideo />
         </div>
       </div>

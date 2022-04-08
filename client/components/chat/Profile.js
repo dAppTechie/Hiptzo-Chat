@@ -1,5 +1,4 @@
 import { BsPersonPlus } from 'react-icons/bs';
-import { BsPersonX } from 'react-icons/bs';
 import { FaEthereum } from 'react-icons/fa';
 import { BiBlock } from 'react-icons/bi';
 import { BsCameraVideo } from 'react-icons/bs';
@@ -25,7 +24,6 @@ const Profile = () => {
       </div>
       <div className="mt-3 flex flex-col items-center">
         <span className="text-white">UserName</span>
-        <span className="text-[#FF7F50]">0x0bcd....bcbc</span>
       </div>
       <div className=" mt-3 flex space-x-3 text-white">
         <div className="flex h-9 w-9 items-center justify-center rounded-full border border-white bg-stone-700">

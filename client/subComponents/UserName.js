@@ -24,7 +24,7 @@ const UserName = () => {
         <FaRegUserCircle className="mr-2 text-3xl text-white opacity-50" />
         <input
           type="text"
-          placeholder="Change user name"
+          placeholder="Change username"
           className="input w-full max-w-xs"
           onKeyPress={(e) => {
             e.key === 'Enter' && handleSubmit(e);

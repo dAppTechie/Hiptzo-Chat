@@ -1,24 +1,6 @@
-import { useMoralis } from 'react-moralis';
-
 const Navbar = () => {
-  const { authenticate, isAuthenticated, logout } = useMoralis();
-
-  const login = async () => {
-    if (!isAuthenticated) {
-      await authenticate({ signingMessage: 'Log in using Moralis' })
-        .then(function (user) {
-          console.log('logged in user:', user);
-          console.log(user.get('ethAddress'));
-        })
-        .catch(function (error) {
-          console.log(error);
-        });
-    }
-  };
-  const logOut = async () => {
-    await logout();
-    console.log('logged out');
-  };
+  const login = async () => {};
+  const logOut = async () => {};
 
   return (
     <div className="gradient-bg sticky top-0 z-10 flex h-20 w-full justify-between">

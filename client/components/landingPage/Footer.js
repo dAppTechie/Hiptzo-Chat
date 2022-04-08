@@ -6,28 +6,21 @@ import {
   RiLinkedinBoxLine,
 } from 'react-icons/ri';
 
-const styles = {
-  wrapper: 'flex flex-col items-center justify-center md:mt-36 mt-20',
-  h1: 'md:text-6xl text-2xl font-bold text-left text-white main-text',
-  p: 'mt-10 md:text-xl text-white main-text',
-  iconWrapper: 'flex justify-between items-center mt-5',
-  icons: 'md:text-5xl text-3xl',
-  copy: 'text-xs md:text-sm md:mt-10 mt-5 mb-10 text-white',
-};
-
 const Footer = () => {
   return (
-    <div className={styles.wrapper}>
-      <h1 className={styles.h1}>The Future of Chat is Now</h1>
-      <p className={styles.p}>Connect with us</p>
-      <div className={styles.iconWrapper}>
-        <RiFacebookCircleLine className={styles.icons} />
-        <RiInstagramLine className={styles.icons} />
-        <RiTwitterLine className={styles.icons} />
-        <RiYoutubeLine className={styles.icons} />
-        <RiLinkedinBoxLine className={styles.icons} />
+    <div className=" mt-20 flex flex-col items-center justify-center md:mt-36">
+      <h1 className="main-text text-left text-2xl font-bold text-white md:text-6xl">
+        The Future of Chat is Now
+      </h1>
+      <p className="main-text mt-10 text-white md:text-xl">Connect with us</p>
+      <div className="mt-5 flex items-center justify-between">
+        <RiFacebookCircleLine className="text-3xl md:text-5xl" />
+        <RiInstagramLine className="text-3xl md:text-5xl" />
+        <RiTwitterLine className="text-3xl md:text-5xl" />
+        <RiYoutubeLine className="text-3xl md:text-5xl" />
+        <RiLinkedinBoxLine className="text-3xl md:text-5xl" />
       </div>
-      <p className={styles.copy}>
+      <p className="mt-5 mb-10 text-xs text-white md:mt-10 md:text-sm">
         Copyright &copy; {new Date().getFullYear()} Hiptzo Chat All Rights
         Reserved
       </p>

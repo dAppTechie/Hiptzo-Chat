@@ -1,4 +1,3 @@
-import { useMoralis } from 'react-moralis';
 import { useDispatch } from 'react-redux';
 
 import { AiOutlineFileImage } from 'react-icons/ai';
@@ -8,19 +7,9 @@ import { IoIosArrowForward } from 'react-icons/io';
 import { AiOutlineClose } from 'react-icons/ai';
 import { setDefaultProfile } from '../../redux/profileSlice';
 import { setChangeUserName } from '../../redux/headSlice';
-import { shortenAddress } from '../../utils/shortenAddress';
 
 const UserProfile = () => {
-  const { user, logout, account } = useMoralis();
-  const currentUser = user;
-  const ethAddress = user.attributes.ethAddress;
-
   const dispatch = useDispatch();
-
-  const logOut = async () => {
-    await logout();
-    console.log('logged out');
-  };
 
   return (
     <div className="relative flex w-96 flex-col items-center border-l border-stone-500 pt-5">
@@ -37,13 +26,7 @@ const UserProfile = () => {
         <span
           className="cursor-pointer text-white"
           onClick={() => dispatch(setChangeUserName())}
-        >
-          {user.getUsername()}
-        </span>
-        <span className="text-[#FF7F50]">{shortenAddress(ethAddress)}</span>
-        <button className="mt-3 text-[#FFBA7A]" onClick={logOut}>
-          LOGOUT
-        </button>
+        ></span>
       </div>
       <div tabIndex="0" className="collapse-arrow collapse w-full">
         <input type="checkbox" />

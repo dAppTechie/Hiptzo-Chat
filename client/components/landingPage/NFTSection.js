@@ -2,20 +2,17 @@ import Image from 'next/image';
 
 import NFTSvg from '../../public/images/NFT.svg';
 
-const styles = {
-  wrapper:
-    'flex flex-col md:flex-row-reverse items-center justify-center mt-10',
-  textWrapper: 'md:w-2/5 w-10/12',
-  h1: 'md:text-2xl font-bold text-left text-white main-text',
-  p: 'text-left text-lg text-white mt-3 secondary-text',
-};
-
 const NFTSection = () => {
   return (
-    <section id="NFT" className={styles.wrapper}>
-      <div className={styles.textWrapper}>
-        <h1 className={styles.h1}>Make your avatar a NFT</h1>
-        <p className={styles.p}>
+    <section
+      id="NFT"
+      className="mt-10 flex flex-col items-center justify-center md:flex-row-reverse"
+    >
+      <div className="w-10/12 md:w-2/5">
+        <h1 className="main-text text-left font-bold text-white md:text-2xl">
+          Make your avatar a NFT
+        </h1>
+        <p className="secondary-text mt-3 text-left text-lg text-white">
           With Hiptzo Chat, you can personalize your chat experience by making
           your avatar a Non-fungible token. Be the one of a kind in the world of
           chat apps.
