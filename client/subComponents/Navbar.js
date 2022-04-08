@@ -24,21 +24,12 @@ const Navbar = () => {
           </a>
         </ul>
         <div className="flex items-center">
-          {isAuthenticated ? (
-            <button
-              onClick={logOut}
-              className="main-text rounded-full border border-[#FF7F50] bg-[#FF7F50] bg-opacity-25 py-2 px-4 text-sm font-bold text-[#FF7F50] hover:border-opacity-10 hover:bg-[#FF7F50] hover:text-white"
-            >
-              Log Out
-            </button>
-          ) : (
-            <button
-              onClick={login}
-              className="main-text rounded-full border border-[#FF7F50] bg-[#FF7F50] bg-opacity-25 py-2 px-4 text-sm font-bold text-[#FF7F50] hover:border-opacity-10 hover:bg-[#FF7F50] hover:text-white"
-            >
-              Login
-            </button>
-          )}
+          <button
+            onClick={login}
+            className="main-text rounded-full border border-[#FF7F50] bg-[#FF7F50] bg-opacity-25 py-2 px-4 text-sm font-bold text-[#FF7F50] hover:border-opacity-10 hover:bg-[#FF7F50] hover:text-white"
+          >
+            Login
+          </button>
         </div>
       </div>
     </div>

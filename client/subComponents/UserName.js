@@ -1,16 +1,13 @@
-import { useMoralis } from 'react-moralis';
 import { useDispatch } from 'react-redux';
 import { FaRegUserCircle } from 'react-icons/fa';
 import { AiOutlineClose } from 'react-icons/ai';
 import { setDefaultHeader } from '../redux/headSlice';
 
 const UserName = () => {
-  const { setUserData, userError, isUserUpdating, user } = useMoralis();
   const dispatch = useDispatch();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    setUserData({ username: e.target.value });
   };
 
   return (
