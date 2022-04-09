@@ -1,13 +1,39 @@
-// TODO Profile
-// TODO User Profile
+import { useState } from 'react';
+import uuid from 'react-uuid';
 
 import Image from 'next/image';
 import ChatLogoSVG from '/public/images/chatlogo.svg';
 import { useDispatch } from 'react-redux';
 import { setUserProfile } from '../../redux/profileSlice';
 
+import OnlineFriends from '../../subComponents/OnlineFriends';
+
+const dummyFriends = [
+  {
+    id: 1,
+    name: 'Chad',
+  },
+  {
+    id: 2,
+    name: 'Jenna',
+  },
+  {
+    id: 3,
+    name: 'Autumn',
+  },
+  {
+    id: 4,
+    name: 'Mia',
+  },
+  {
+    id: 5,
+    name: 'Lacey',
+  },
+];
+
 const LeftMain = () => {
   const dispatch = useDispatch();
+  const [onlineFriends, setOnlineFriends] = useState(dummyFriends);
 
   return (
     <div className="flex w-fit flex-col items-center justify-between border-r border-stone-600 p-4">
@@ -15,31 +41,9 @@ const LeftMain = () => {
         <div>
           <Image src={ChatLogoSVG} alt="Logo" width={32} />
         </div>
-        <div className="avatar online">
-          <div className="w-12 rounded-full">
-            <img src="https://api.lorem.space/image/face?hash=28212" />
-          </div>
-        </div>
-        <div className="avatar online">
-          <div className="w-12 rounded-full">
-            <img src="https://api.lorem.space/image/face?hash=27212" />
-          </div>
-        </div>
-        <div className="avatar offline">
-          <div className="w-12 rounded-full">
-            <img src="https://api.lorem.space/image/face?hash=26212" />
-          </div>
-        </div>
-        <div className="avatar online">
-          <div className="w-12 rounded-full">
-            <img src="https://api.lorem.space/image/face?hash=25212" />
-          </div>
-        </div>
-        <div className="avatar offline">
-          <div className="w-12 rounded-full">
-            <img src="https://api.lorem.space/image/face?hash=24212" />
-          </div>
-        </div>
+        {onlineFriends.map((friend) => (
+          <OnlineFriends key={uuid()} id={friend.id} name={friend.name} />
+        ))}
       </div>
       <div>
         <div
