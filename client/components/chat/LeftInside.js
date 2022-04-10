@@ -4,48 +4,35 @@ import { AiOutlinePlus } from 'react-icons/ai';
 
 import Channels from '../../subComponents/Channels';
 import DirectMessages from '../../subComponents/DirectMessages';
-
-const dummyChannels = [
-  {
-    roomId: 1,
-    roomName: 'general',
-  },
-  {
-    roomId: 2,
-    roomName: 'programming',
-  },
-  {
-    roomId: 3,
-    roomName: 'gaming',
-  },
-  {
-    roomId: 4,
-    roomName: 'chill',
-  },
-];
-
-const dummyDMs = [
-  {
-    id: 1,
-    name: 'Chad',
-  },
-  {
-    id: 2,
-    name: 'Jenna',
-  },
-  {
-    id: 3,
-    name: 'Autumn',
-  },
-  {
-    id: 4,
-    name: 'Mia',
-  },
-];
+import { Router } from 'next/router';
 
 const LeftInside = () => {
-  const [channels, setChannels] = useState(dummyChannels);
-  const [directmessages, setDirectMessages] = useState(dummyDMs);
+  const [channels, setChannels] = useState([]);
+  const [directmessages, setDirectMessages] = useState([]);
+
+  useEffect(async () => {
+    try {
+      const response = await fetch(
+        `${process.env.NEXT_PUBLIC_API_URL}/getchannels`
+      );
+
+      const data = await response.json();
+      setChannels(data);
+      Router.push(`?channel=${data[0].roomId}&name=${data[0].roomName}`);
+    } catch (error) {
+      console.error(error);
+    }
+
+    try {
+      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/getdms`);
+
+      const dms = await response.json();
+      setDirectMessages(dms);
+      console.log('dm', dms);
+    } catch (error) {
+      console.error(error);
+    }
+  }, []);
 
   return (
     <div className="flex w-96 flex-col border-r border-stone-600 p-5">
@@ -65,8 +52,8 @@ const LeftInside = () => {
               />
             ))}
             <div className="flex items-center space-x-4">
-              <AiOutlinePlus className="text-sm text-white" />
-              <span className="text-sm">Create Channel</span>
+              <AiOutlinePlus className="text-sm text-[#FDE05D]" />
+              <span className="text-sm text-[#FDE05D]">Create Channel</span>
             </div>
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { useDispatch } from 'react-redux';
+import { useContext } from 'react';
 import { BsPersonPlus } from 'react-icons/bs';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { BsMic } from 'react-icons/bs';
@@ -7,10 +7,11 @@ import { AiOutlineFileImage } from 'react-icons/ai';
 import { AiOutlineFileText } from 'react-icons/ai';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { IoIosArrowForward } from 'react-icons/io';
-import { setSearchBar } from '../../redux/headSlice';
+
+import { HiptzoChatContext } from '../../context/context';
 
 const RightMain = () => {
-  const dispatch = useDispatch();
+  const { roomName } = useContext(HiptzoChatContext);
   return (
     <div className="flex w-96 flex-col items-center border-l border-stone-500 pt-5">
       <div className="avatar placeholder ">
@@ -19,13 +20,10 @@ const RightMain = () => {
         </div>
       </div>
       <div className="mt-3">
-        <span className="text-white">#room-name</span>
+        <span className="text-white">{roomName}</span>
       </div>
       <div className=" mt-3 flex space-x-3 text-white">
-        <div
-          className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white bg-stone-700"
-          onClick={() => dispatch(setSearchBar())}
-        >
+        <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white bg-stone-700">
           <BsPersonPlus />
         </div>
         <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white  bg-stone-700">

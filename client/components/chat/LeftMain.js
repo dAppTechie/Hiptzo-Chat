@@ -3,8 +3,6 @@ import uuid from 'react-uuid';
 
 import Image from 'next/image';
 import ChatLogoSVG from '/public/images/chatlogo.svg';
-import { useDispatch } from 'react-redux';
-import { setUserProfile } from '../../redux/profileSlice';
 
 import OnlineFriends from '../../subComponents/OnlineFriends';
 
@@ -32,7 +30,6 @@ const dummyFriends = [
 ];
 
 const LeftMain = () => {
-  const dispatch = useDispatch();
   const [onlineFriends, setOnlineFriends] = useState(dummyFriends);
 
   return (

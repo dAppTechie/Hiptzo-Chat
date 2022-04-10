@@ -4,10 +4,10 @@ const DirectMessages = ({ id, name }) => {
   return (
     <div>
       <div className="avatar cursor-pointer space-x-2">
-        <div className="w-6 rounded-full">
+        <div className="w-5 rounded-full">
           <img src={`https://api.lorem.space/image/face?hash=${rand}`} />
         </div>
-        <span>{name}</span>
+        <span className="text-sm">{name}</span>
       </div>
     </div>
   );
