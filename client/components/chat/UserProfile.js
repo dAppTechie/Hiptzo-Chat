@@ -14,15 +14,20 @@ const UserProfile = () => {
   const [username, setUsername] = useState([]);
 
   useEffect(() => {
-    async function getUsers() {
-      const users = await Moralis.Cloud.run('getUsers');
-      setUsername(users);
+    async function getUsername(username) {
+      const username = await Moralis.Cloud.run('getUsername', {
+        username: username,
+      });
+      setUsername(username);
     }
 
-    getUsers();
+    getUsername('doggy');
   }, []);
 
-  console.log('user', user);
+  username.map((username) =>
+    console.log('username', username.attributes.username)
+  );
+
   const dispatch = useDispatch();
   return (
     <div className="relative flex w-96 flex-col items-center border-l border-stone-500 pt-5">
