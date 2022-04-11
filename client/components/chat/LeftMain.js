@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import uuid from 'react-uuid';
-
+import { useDispatch } from 'react-redux';
+import { setUserProfile } from '../../redux/profileSlice';
 import Image from 'next/image';
 import ChatLogoSVG from '/public/images/chatlogo.svg';
 
@@ -31,7 +32,7 @@ const dummyFriends = [
 
 const LeftMain = () => {
   const [onlineFriends, setOnlineFriends] = useState(dummyFriends);
-
+  const dispatch = useDispatch();
   return (
     <div className="flex w-fit flex-col items-center justify-between border-r border-stone-600 p-4">
       <div className="flex flex-col items-center space-y-4">

@@ -10,29 +10,7 @@ const LeftInside = () => {
   const [channels, setChannels] = useState([]);
   const [directmessages, setDirectMessages] = useState([]);
 
-  useEffect(async () => {
-    try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/getchannels`
-      );
-
-      const data = await response.json();
-      setChannels(data);
-      Router.push(`?channel=${data[0].roomId}&name=${data[0].roomName}`);
-    } catch (error) {
-      console.error(error);
-    }
-
-    try {
-      const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/getdms`);
-
-      const dms = await response.json();
-      setDirectMessages(dms);
-      console.log('dm', dms);
-    } catch (error) {
-      console.error(error);
-    }
-  }, []);
+  useEffect(async () => {}, []);
 
   return (
     <div className="flex w-96 flex-col border-r border-stone-600 p-5">
@@ -40,7 +18,7 @@ const LeftInside = () => {
         <h1 className="main-text text-xl font-bold text-white">Hiptzo Chat</h1>
       </div>
       <div className="flex h-full flex-col">
-        <div tabIndex="0" className="collapse-arrow collapse">
+        <div tabIndex="0" className="collapse collapse-arrow">
           <input type="checkbox" />
           <div className="collapse-title text-base font-medium">CHANNELS</div>
           <div className="collapse-content space-y-1">

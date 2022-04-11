@@ -1,8 +1,7 @@
-import { useContext } from 'react';
-import { HiptzoChatContext } from '../context/context';
+import { useMoralis } from 'react-moralis';
 
 const Navbar = () => {
-  const { currentAccount, connectWallet } = useContext(HiptzoChatContext);
+  const { authenticate } = useMoralis();
   return (
     <div className="gradient-bg sticky top-0 z-10 flex h-20 w-full justify-between">
       <div className="ml-20 flex items-center">
@@ -26,7 +25,7 @@ const Navbar = () => {
         </ul>
         <div className="flex items-center">
           <button
-            onClick={() => connectWallet()}
+            onClick={() => authenticate()}
             className="main-text rounded-full border border-[#FF7F50] bg-[#FF7F50] bg-opacity-25 py-2 px-4 text-sm font-bold text-[#FF7F50] hover:border-opacity-10 hover:bg-[#FF7F50] hover:text-white"
           >
             Login

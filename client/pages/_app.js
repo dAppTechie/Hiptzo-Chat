@@ -1,12 +1,18 @@
 import '../styles/globals.css';
-import { HiptzoChatProvider } from '../context/context';
-import { useRouter } from 'next/router';
+import store from '../redux/store';
+import { Provider } from 'react-redux';
+import { MoralisProvider } from 'react-moralis';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <HiptzoChatProvider>
-      <Component {...pageProps} />
-    </HiptzoChatProvider>
+    <Provider store={store}>
+      <MoralisProvider
+        appId={process.env.NEXT_PUBLIC_MORALIS_ID}
+        serverUrl={process.env.NEXT_PUBLIC_MORALIS_URL}
+      >
+        <Component {...pageProps} />
+      </MoralisProvider>
+    </Provider>
   );
 }
 

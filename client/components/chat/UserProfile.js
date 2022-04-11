@@ -1,16 +1,29 @@
-import { useDispatch } from 'react-redux';
-
+import { useEffect, useState } from 'react';
 import { AiOutlineFileImage } from 'react-icons/ai';
 import { AiOutlineFileText } from 'react-icons/ai';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { IoIosArrowForward } from 'react-icons/io';
 import { AiOutlineClose } from 'react-icons/ai';
+import { useDispatch } from 'react-redux';
 import { setDefaultProfile } from '../../redux/profileSlice';
-import { setChangeUserName } from '../../redux/headSlice';
+import { useMoralis } from 'react-moralis';
+import { shortenAddress } from '../../utils/shortenAddress';
 
 const UserProfile = () => {
-  const dispatch = useDispatch();
+  const { user, Moralis } = useMoralis();
+  const [username, setUsername] = useState([]);
 
+  useEffect(() => {
+    async function getUsers() {
+      const users = await Moralis.Cloud.run('getUsers');
+      setUsername(users);
+    }
+
+    getUsers();
+  }, []);
+
+  console.log('user', user);
+  const dispatch = useDispatch();
   return (
     <div className="relative flex w-96 flex-col items-center border-l border-stone-500 pt-5">
       <AiOutlineClose
@@ -23,10 +36,10 @@ const UserProfile = () => {
         </div>
       </div>
       <div className="mt-3 flex flex-col items-center">
-        <span
-          className="cursor-pointer text-white"
-          onClick={() => dispatch(setChangeUserName())}
-        ></span>
+        <span className="cursor-pointer text-white">{user.getUsername()}</span>
+        <span className="text-[#FF7F50]">
+          {shortenAddress(user.attributes.ethAddress)}
+        </span>
       </div>
       <div tabIndex="0" className="collapse-arrow collapse w-full">
         <input type="checkbox" />

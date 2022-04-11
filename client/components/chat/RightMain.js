@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { BsPersonPlus } from 'react-icons/bs';
 import { AiOutlineFileSearch } from 'react-icons/ai';
 import { BsMic } from 'react-icons/bs';
@@ -8,10 +7,7 @@ import { AiOutlineFileText } from 'react-icons/ai';
 import { AiOutlineDownload } from 'react-icons/ai';
 import { IoIosArrowForward } from 'react-icons/io';
 
-import { HiptzoChatContext } from '../../context/context';
-
 const RightMain = () => {
-  const { roomName } = useContext(HiptzoChatContext);
   return (
     <div className="flex w-96 flex-col items-center border-l border-stone-500 pt-5">
       <div className="avatar placeholder ">
@@ -20,7 +16,7 @@ const RightMain = () => {
         </div>
       </div>
       <div className="mt-3">
-        <span className="text-white">{roomName}</span>
+        <span className="text-white">test</span>
       </div>
       <div className=" mt-3 flex space-x-3 text-white">
         <div className="flex h-9 w-9 cursor-pointer items-center justify-center rounded-full border border-white bg-stone-700">

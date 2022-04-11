@@ -1,3 +1,5 @@
+import { useSelector } from 'react-redux';
+import { currentProfile } from '../redux/profileSlice';
 import {
   LeftMain,
   LeftInside,
@@ -8,14 +10,15 @@ import {
 } from '../components/chat';
 
 const chat = () => {
+  const profile = useSelector((state) => state.profile.value);
   return (
     <div className="absolute top-0 left-0 flex h-full w-full">
       <LeftMain />
       <LeftInside />
       <Main />
-      {/* <UserProfile />
-      <Profile /> */}
-      <RightMain />
+      {profile === 'room' && <RightMain />}
+      {profile === 'user' && <UserProfile />}
+      {profile === 'profile' && <Profile />}
     </div>
   );
 };
