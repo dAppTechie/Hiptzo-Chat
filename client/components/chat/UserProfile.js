@@ -11,22 +11,6 @@ import { shortenAddress } from '../../utils/shortenAddress';
 
 const UserProfile = () => {
   const { user, Moralis } = useMoralis();
-  const [username, setUsername] = useState([]);
-
-  useEffect(() => {
-    async function getUsername(username) {
-      const username = await Moralis.Cloud.run('getUsername', {
-        username: username,
-      });
-      setUsername(username);
-    }
-
-    getUsername('doggy');
-  }, []);
-
-  username.map((username) =>
-    console.log('username', username.attributes.username)
-  );
 
   const dispatch = useDispatch();
   return (
